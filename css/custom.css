@@ -21,6 +21,9 @@
   --border: #e8ddd0;
   --white: #ffffff;
   --code-text: #8b5e3c;
+  /* Text colours with WCAG AA contrast (>= 4.5:1) on white and cream */
+  --text-muted: #7a6650;
+  --link: #86683a;
 
   /* Shadows */
   --shadow-card: 0 1px 3px rgba(139, 115, 85, 0.06),
@@ -64,7 +67,8 @@
    2. Base & Container
    =========================================== */
 body {
-  font-family: "Noto Sans TC", "Open Sans", sans-serif;
+  /* System CJK fonts: no 1.5 MB webfont download, no render-blocking font CSS */
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "Segoe UI", sans-serif;
   font-size: 15px;
   font-size: 0.9375rem;
   line-height: 1.8;
@@ -123,6 +127,13 @@ body {
   padding: 0 2.2em;
 }
 
+/* On the homepage the site title is the page's <h1>. */
+h1.logo__title {
+  margin: 0;
+  font-weight: 700;
+  line-height: inherit;
+}
+
 .logo__title::before,
 .logo__title::after {
   content: "✦";
@@ -143,7 +154,7 @@ body {
 }
 
 .logo__tagline {
-  color: var(--brown-light);
+  color: var(--text-muted);
   letter-spacing: 3px;
   font-size: 0.8rem;
   margin-top: var(--space-xs);
@@ -251,7 +262,7 @@ a {
 }
 
 a:hover {
-  color: var(--gold);
+  color: var(--link);
 }
 
 figcaption {
@@ -317,14 +328,14 @@ mark {
 .content a,
 .warning a,
 .authorbox__description a {
-  color: var(--gold);
+  color: var(--link);
   text-decoration-color: rgba(198, 169, 125, 0.3);
 }
 
 .content a:hover,
 .warning a:hover,
 .authorbox__description a:hover {
-  color: var(--gold-dark);
+  color: var(--brown-dark);
   text-decoration-color: var(--gold);
 }
 
@@ -398,7 +409,7 @@ mark {
 .list__footer-readmore.btn {
   display: inline-block;
   background: transparent !important;
-  color: var(--brown-light) !important;
+  color: var(--text-muted) !important;
   border: none !important;
   border-radius: 0 !important;
   padding: 0 !important;
@@ -417,7 +428,7 @@ mark {
 
 .list__footer-readmore.btn:hover {
   background: transparent !important;
-  color: var(--gold) !important;
+  color: var(--link) !important;
 }
 
 .list__footer-readmore.btn:hover::after {
@@ -429,13 +440,13 @@ mark {
    =========================================== */
 .meta,
 .meta a {
-  color: var(--brown-light);
+  color: var(--text-muted);
   font-size: 0.6875rem;
   letter-spacing: 1px;
 }
 
 .meta a:hover {
-  color: var(--gold);
+  color: var(--link);
 }
 
 .meta__icon {
@@ -527,7 +538,7 @@ mark {
 }
 
 .toc__menu a {
-  color: var(--gold);
+  color: var(--link);
   border-bottom-color: var(--border);
 }
 
@@ -567,6 +578,8 @@ mark {
 }
 
 .widget__title {
+  margin-top: 0;
+  line-height: inherit;
   text-align: center;
   letter-spacing: 2px;
   border-bottom: none;
@@ -595,7 +608,7 @@ mark {
 }
 
 .widget__item:hover {
-  color: var(--gold);
+  color: var(--link);
   padding-left: var(--space-xs);
 }
 
@@ -635,7 +648,7 @@ mark {
 }
 
 .widget-taglist__link:hover {
-  color: var(--gold) !important;
+  color: var(--link) !important;
   background: rgba(198, 169, 125, 0.08) !important;
   border-color: var(--gold);
 }
@@ -661,7 +674,7 @@ mark {
 }
 
 .pagination__item:hover {
-  color: var(--white);
+  color: var(--brown-dark);
   background: var(--gold);
   border-color: var(--gold);
   transform: translateY(-2px);
@@ -669,7 +682,7 @@ mark {
 }
 
 .pagination__item--current {
-  color: var(--white);
+  color: var(--brown-dark);
   background: var(--gold);
   border-color: var(--gold);
 }
@@ -679,7 +692,7 @@ mark {
    =========================================== */
 .footer {
   background: var(--brown-dark);
-  color: var(--brown-light);
+  color: #d4c4b0;
   text-align: center;
   padding: var(--space-2xl) var(--space-lg);
   position: relative;
